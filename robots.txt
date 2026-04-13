@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://erikrivera.com/sitemap.xml
+Sitemap: https://www.erikrivera.com/sitemap.xml
