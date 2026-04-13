@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erik Rivera</title>
+  <meta name="description" content="Erik Rivera is CEO of OnePet, the pet wellness holding company behind CertaPet and Honest Paws. Naval Academy graduate and entrepreneur." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://erikrivera.com/" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Erik Rivera",
+    "jobTitle": "Chief Executive Officer",
+    "worksFor": { "@type": "Organization", "name": "OnePet", "url": "https://onepet.com" },
+    "url": "https://erikrivera.com",
+    "description": "Erik Rivera is the CEO of OnePet, the pet wellness holding company behind CertaPet and Honest Paws. Naval Academy graduate and former Naval Special Operations Officer (EOD) turned entrepreneur and investor.",
+    "alumniOf": { "@type": "EducationalOrganization", "name": "United States Naval Academy" },
+    "knowsAbout": ["Pet wellness", "Direct-to-consumer brands", "E-commerce", "Entrepreneurship", "Investing"],
+    "address": { "@type": "PostalAddress", "addressLocality": "San Juan", "addressRegion": "PR", "addressCountry": "US" },
+    "sameAs": [
+      "https://www.crunchbase.com/person/erik-rivera",
+      "https://x.com/erikfrivera",
+      "https://www.instagram.com/erik.f.rivera/",
+      "https://wellfound.com/p/erikrivera"
+    ],
+    "memberOf": [
+      { "@type": "Organization", "name": "OnePet", "url": "https://onepet.com" },
+      { "@type": "Organization", "name": "CertaPet", "url": "https://certapet.com" },
+      { "@type": "Organization", "name": "Honest Paws", "url": "https://honestpaws.com" },
+      { "@type": "Organization", "name": "Vets Preferred", "url": "https://vetspreferred.com" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f9f8f6;
+      --ink: #111;
+      --mid: #888;
+      --line: #e0ddd8;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 80px 32px 80px;
+      width: 100%;
+    }
+
+    /* ── Hero block ── */
+    .hero { margin-bottom: 56px; }
+
+    .name {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .name em { font-style: italic; color: var(--mid); }
+
+    .tagline {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--mid);
+      margin-bottom: 10px;
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--mid);
+      margin-bottom: 24px;
+    }
+
+    .location svg { flex-shrink: 0; }
+
+    /* ── Social pills ── */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .links a {
+      font-size: 13px;
+      color: var(--mid);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      padding: 5px 14px;
+      border-radius: 100px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .links a:hover { color: var(--ink); border-color: #aaa; }
+
+    /* ── Sections ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 40px 0;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+
+    /* Bio */
+    .bio { font-size: 15px; line-height: 1.8; color: #333; }
+    .bio p + p { margin-top: 14px; }
+
+    /* Brands / Investments rows */
+    .rows { list-style: none; }
+
+    .rows li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rows li:first-child { border-top: 1px solid var(--line); }
+
+    .row-name { font-size: 15px; font-weight: 400; }
+
+    .row-note {
+      font-size: 13px;
+      color: var(--mid);
+      flex-shrink: 0;
+    }
+
+    .rows a { text-decoration: none; color: inherit; }
+    .rows a:hover .row-name {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Principles */
+    .principles { list-style: none; }
+
+    .principles li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principles li:first-child { border-top: 1px solid var(--line); }
+
+    .principle-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px 32px;
+      font-size: 12px;
+      color: #ccc;
+    }
+
+    @media (max-width: 480px) {
+      main { padding: 56px 24px 56px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1 class="name">Erik <em>Rivera</em></h1>
+      <p class="tagline">making complex things simple</p>
+      <p class="location">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        San Juan, Puerto Rico
+      </p>
+      <nav class="links" aria-label="Social profiles">
+        <a href="https://x.com/erikfrivera" target="_blank" rel="noopener">X</a>
+        <a href="https://www.instagram.com/erik.f.rivera/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.crunchbase.com/person/erik-rivera" target="_blank" rel="noopener">Crunchbase</a>
+        <a href="https://wellfound.com/p/erikrivera" target="_blank" rel="noopener">Wellfound</a>
+      </nav>
+    </div>
+
+    <!-- Bio -->
+    <p class="section-label">Bio</p>
+    <div class="bio">
+      <p>Naval Academy graduate. Served as a Naval Special Operations Officer (EOD) — leading teams through high-stakes environments where clarity and precision were non-negotiable.</p>
+      <p>Transitioned into entrepreneurship, founding CertaPet and building it into OnePet — a pet wellness holding company behind CertaPet, Honest Paws, and Vets Preferred, serving millions of pet owners nationwide.</p>
+      <p>Now focused on building and investing in internet businesses where strong fundamentals meet scalable distribution.</p>
+    </div>
+
+    <hr />
+
+    <!-- Portfolio -->
+    <p class="section-label">Portfolio</p>
+    <ul class="rows">
+      <li>
+        <a href="https://onepet.com" target="_blank" rel="noopener"><span class="row-name">OnePet</span></a>
+        <span class="row-note">CEO</span>
+      </li>
+      <li>
+        <a href="https://certapet.com" target="_blank" rel="noopener"><span class="row-name">CertaPet</span></a>
+        <span class="row-note">Founder</span>
+      </li>
+      <li>
+        <a href="https://honestpaws.com" target="_blank" rel="noopener"><span class="row-name">Honest Paws</span></a>
+        <span class="row-note">Founder</span>
+      </li>
+      <li>
+        <a href="https://vetspreferred.com" target="_blank" rel="noopener"><span class="row-name">Vets Preferred</span></a>
+        <span class="row-note">Founder</span>
+      </li>
+    </ul>
+
+    <hr />
+
+    <!-- Investments -->
+    <p class="section-label">Investments</p>
+    <ul class="rows">
+      <li>
+        <span class="row-name">AdEspresso</span>
+        <span class="row-note">Investor</span>
+      </li>
+      <li>
+        <span class="row-name">Sellbrite</span>
+        <span class="row-note">Investor</span>
+      </li>
+      <li>
+        <span class="row-name">Shift.org</span>
+        <span class="row-note">Investor</span>
+      </li>
+      <li>
+        <span class="row-name">Circufiber</span>
+        <span class="row-note">Investor</span>
+      </li>
+    </ul>
+
+    <hr />
+
+    <!-- Principles -->
+    <p class="section-label">Operating principles</p>
+    <ul class="principles">
+      <li><span class="principle-title">Action generates information.</span></li>
+      <li><span class="principle-title">Simple is better.</span></li>
+    </ul>
+
+  </main>
+
+  <footer>© Erik Rivera</footer>
+
+</body>
+</html>
