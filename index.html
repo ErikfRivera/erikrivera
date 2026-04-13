@@ -3,39 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Erik Rivera</title>
-  <meta name="description" content="Erik Rivera is CEO of OnePet, the pet wellness holding company behind CertaPet and Honest Paws. Naval Academy graduate and entrepreneur." />
-  <meta name="robots" content="index, follow" />
+
+  <title>Erik Rivera — Founder &amp; CEO of OnePet</title>
+  <meta name="description" content="Erik Rivera is the CEO of OnePet, the pet wellness holding company behind CertaPet, Honest Paws, and Vets Preferred. United States Naval Academy graduate and former Naval Special Operations Officer (EOD), entrepreneur and investor based in San Juan, Puerto Rico." />
+  <meta name="author" content="Erik Rivera" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#f9f8f6" />
   <link rel="canonical" href="https://erikrivera.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://erikrivera.com/" />
+  <meta property="og:title" content="Erik Rivera — Founder &amp; CEO of OnePet" />
+  <meta property="og:description" content="CEO of OnePet — the pet wellness holding company behind CertaPet, Honest Paws, and Vets Preferred. Naval Academy graduate, former Naval Special Operations Officer (EOD), entrepreneur and investor." />
+  <meta property="og:image" content="https://erikrivera.com/images/erik-rivera.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Erik Rivera, CEO of OnePet" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Erik Rivera" />
+  <meta property="profile:first_name" content="Erik" />
+  <meta property="profile:last_name" content="Rivera" />
+  <meta property="profile:username" content="erikfrivera" />
+  <meta property="profile:gender" content="male" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@erikfrivera" />
+  <meta name="twitter:creator" content="@erikfrivera" />
+  <meta name="twitter:title" content="Erik Rivera — Founder &amp; CEO of OnePet" />
+  <meta name="twitter:description" content="CEO of OnePet — the pet wellness holding company behind CertaPet, Honest Paws, and Vets Preferred. Naval Academy graduate, entrepreneur and investor." />
+  <meta name="twitter:image" content="https://erikrivera.com/images/erik-rivera.jpg" />
+  <meta name="twitter:image:alt" content="Erik Rivera, CEO of OnePet" />
+
+  <!-- Favicon (inline SVG monogram, no extra request) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f9f8f6'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='24' fill='%23111' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Erik Rivera",
-    "jobTitle": "Chief Executive Officer",
-    "worksFor": { "@type": "Organization", "name": "OnePet", "url": "https://onepet.com" },
-    "url": "https://erikrivera.com",
-    "description": "Erik Rivera is the CEO of OnePet, the pet wellness holding company behind CertaPet and Honest Paws. Naval Academy graduate and former Naval Special Operations Officer (EOD) turned entrepreneur and investor.",
-    "alumniOf": { "@type": "EducationalOrganization", "name": "United States Naval Academy" },
-    "knowsAbout": ["Pet wellness", "Direct-to-consumer brands", "E-commerce", "Entrepreneurship", "Investing"],
-    "address": { "@type": "PostalAddress", "addressLocality": "San Juan", "addressRegion": "PR", "addressCountry": "US" },
-    "sameAs": [
-      "https://www.crunchbase.com/person/erik-rivera",
-      "https://x.com/erikfrivera",
-      "https://www.instagram.com/erik.f.rivera/",
-      "https://wellfound.com/p/erikrivera"
-    ],
-    "memberOf": [
-      { "@type": "Organization", "name": "OnePet", "url": "https://onepet.com" },
-      { "@type": "Organization", "name": "CertaPet", "url": "https://certapet.com" },
-      { "@type": "Organization", "name": "Honest Paws", "url": "https://honestpaws.com" },
-      { "@type": "Organization", "name": "Vets Preferred", "url": "https://vetspreferred.com" }
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://erikrivera.com/#person",
+        "name": "Erik Rivera",
+        "givenName": "Erik",
+        "familyName": "Rivera",
+        "url": "https://erikrivera.com/",
+        "image": { "@id": "https://erikrivera.com/#image" },
+        "jobTitle": ["Chief Executive Officer", "Founder"],
+        "description": "Erik Rivera is the CEO of OnePet, the pet wellness holding company behind CertaPet, Honest Paws, and Vets Preferred. A United States Naval Academy graduate and former Naval Special Operations Officer (Explosive Ordnance Disposal), he is an entrepreneur and investor based in San Juan, Puerto Rico.",
+        "nationality": { "@type": "Country", "name": "United States" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Juan",
+          "addressRegion": "PR",
+          "addressCountry": "US"
+        },
+        "homeLocation": { "@type": "Place", "name": "San Juan, Puerto Rico" },
+        "worksFor": { "@id": "https://onepet.com/#org" },
+        "founder": [
+          { "@id": "https://onepet.com/#org" },
+          { "@id": "https://certapet.com/#org" },
+          { "@id": "https://honestpaws.com/#org" },
+          { "@id": "https://vetspreferred.com/#org" }
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "United States Naval Academy",
+          "url": "https://www.usna.edu/",
+          "sameAs": [
+            "https://en.wikipedia.org/wiki/United_States_Naval_Academy",
+            "https://www.wikidata.org/wiki/Q1378038"
+          ]
+        },
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Chief Executive Officer",
+            "occupationLocation": { "@type": "City", "name": "San Juan, Puerto Rico" }
+          },
+          {
+            "@type": "Occupation",
+            "name": "Naval Special Operations Officer (Explosive Ordnance Disposal)"
+          }
+        ],
+        "knowsAbout": [
+          "Pet wellness",
+          "Direct-to-consumer brands",
+          "E-commerce",
+          "Entrepreneurship",
+          "Investing",
+          "Holding companies",
+          "Consumer health"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/erik-rivera/",
+          "https://x.com/erikfrivera",
+          "https://www.facebook.com/mr.erik.rivera",
+          "https://www.instagram.com/erik.f.rivera/",
+          "https://www.youtube.com/@erikfrivera",
+          "https://www.crunchbase.com/person/erik-rivera",
+          "https://wellfound.com/p/erikrivera"
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://erikrivera.com/#image",
+        "url": "https://erikrivera.com/images/erik-rivera.jpg",
+        "contentUrl": "https://erikrivera.com/images/erik-rivera.jpg",
+        "width": 1200,
+        "height": 1200,
+        "caption": "Erik Rivera, CEO of OnePet"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://onepet.com/#org",
+        "name": "OnePet",
+        "url": "https://onepet.com",
+        "description": "Pet wellness holding company behind CertaPet, Honest Paws, and Vets Preferred.",
+        "founder": { "@id": "https://erikrivera.com/#person" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://certapet.com/#org",
+        "name": "CertaPet",
+        "url": "https://certapet.com",
+        "description": "Online emotional support animal letter service connecting pet owners with licensed mental health professionals.",
+        "founder": { "@id": "https://erikrivera.com/#person" },
+        "parentOrganization": { "@id": "https://onepet.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://honestpaws.com/#org",
+        "name": "Honest Paws",
+        "url": "https://honestpaws.com",
+        "description": "Direct-to-consumer pet wellness brand specializing in CBD and natural products for dogs.",
+        "founder": { "@id": "https://erikrivera.com/#person" },
+        "parentOrganization": { "@id": "https://onepet.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://vetspreferred.com/#org",
+        "name": "Vets Preferred",
+        "url": "https://vetspreferred.com",
+        "description": "Veterinarian-formulated pet supplements and wellness products.",
+        "founder": { "@id": "https://erikrivera.com/#person" },
+        "parentOrganization": { "@id": "https://onepet.com/#org" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://erikrivera.com/#website",
+        "url": "https://erikrivera.com/",
+        "name": "Erik Rivera",
+        "description": "Personal site of Erik Rivera, CEO of OnePet.",
+        "publisher": { "@id": "https://erikrivera.com/#person" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://erikrivera.com/#webpage",
+        "url": "https://erikrivera.com/",
+        "name": "Erik Rivera — Founder & CEO of OnePet",
+        "isPartOf": { "@id": "https://erikrivera.com/#website" },
+        "about": { "@id": "https://erikrivera.com/#person" },
+        "mainEntity": { "@id": "https://erikrivera.com/#person" },
+        "primaryImageOfPage": { "@id": "https://erikrivera.com/#image" },
+        "inLanguage": "en-US"
+      }
     ]
   }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
 
   <style>
@@ -68,6 +209,8 @@
       width: 100%;
     }
 
+    a { color: inherit; }
+
     /* ── Hero block ── */
     .hero { margin-bottom: 56px; }
 
@@ -97,6 +240,7 @@
       font-size: 13px;
       color: var(--mid);
       margin-bottom: 24px;
+      font-style: normal;
     }
 
     .location svg { flex-shrink: 0; }
@@ -129,6 +273,7 @@
 
     .section-label {
       font-size: 11px;
+      font-weight: 400;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--mid);
@@ -138,6 +283,13 @@
     /* Bio */
     .bio { font-size: 15px; line-height: 1.8; color: #333; }
     .bio p + p { margin-top: 14px; }
+    .bio a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: border-color 0.15s;
+    }
+    .bio a:hover { border-color: var(--ink); }
 
     /* Brands / Investments rows */
     .rows { list-style: none; }
@@ -201,87 +353,98 @@
   <main>
 
     <!-- Hero -->
-    <div class="hero">
+    <header class="hero">
       <h1 class="name">Erik <em>Rivera</em></h1>
       <p class="tagline">making complex things simple</p>
-      <p class="location">
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        San Juan, Puerto Rico
-      </p>
+      <address class="location">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <span>San Juan, Puerto Rico</span>
+      </address>
       <nav class="links" aria-label="Social profiles">
-        <a href="https://x.com/erikfrivera" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/erik.f.rivera/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.crunchbase.com/person/erik-rivera" target="_blank" rel="noopener">Crunchbase</a>
-        <a href="https://wellfound.com/p/erikrivera" target="_blank" rel="noopener">Wellfound</a>
+        <a href="https://www.linkedin.com/in/erik-rivera/" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="https://x.com/erikfrivera" rel="me noopener" target="_blank">X</a>
+        <a href="https://www.instagram.com/erik.f.rivera/" rel="me noopener" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/mr.erik.rivera" rel="me noopener" target="_blank">Facebook</a>
+        <a href="https://www.youtube.com/@erikfrivera" rel="me noopener" target="_blank">YouTube</a>
+        <a href="https://www.crunchbase.com/person/erik-rivera" rel="me noopener" target="_blank">Crunchbase</a>
+        <a href="https://wellfound.com/p/erikrivera" rel="me noopener" target="_blank">Wellfound</a>
       </nav>
-    </div>
+    </header>
 
     <!-- Bio -->
-    <p class="section-label">Bio</p>
-    <div class="bio">
-      <p>Naval Academy graduate. Served as a Naval Special Operations Officer (EOD) — leading teams through high-stakes environments where clarity and precision were non-negotiable.</p>
-      <p>Transitioned into entrepreneurship, founding CertaPet and building it into OnePet — a pet wellness holding company behind CertaPet, Honest Paws, and Vets Preferred, serving millions of pet owners nationwide.</p>
-      <p>Now focused on building and investing in internet businesses where strong fundamentals meet scalable distribution.</p>
-    </div>
+    <section aria-labelledby="bio-heading">
+      <h2 id="bio-heading" class="section-label">Bio</h2>
+      <div class="bio">
+        <p><a href="https://www.usna.edu/" rel="noopener" target="_blank">United States Naval Academy</a> graduate. Served as a Naval Special Operations Officer (Explosive Ordnance Disposal) — leading teams through high-stakes environments where clarity and precision were non-negotiable.</p>
+        <p>Transitioned into entrepreneurship, founding <a href="https://certapet.com" rel="noopener" target="_blank">CertaPet</a> and building it into <a href="https://onepet.com" rel="noopener" target="_blank">OnePet</a> — a pet wellness holding company behind <a href="https://certapet.com" rel="noopener" target="_blank">CertaPet</a>, <a href="https://honestpaws.com" rel="noopener" target="_blank">Honest Paws</a>, and <a href="https://vetspreferred.com" rel="noopener" target="_blank">Vets Preferred</a>, serving millions of pet owners nationwide.</p>
+        <p>Now focused on building and investing in internet businesses where strong fundamentals meet scalable distribution.</p>
+      </div>
+    </section>
 
     <hr />
 
     <!-- Portfolio -->
-    <p class="section-label">Portfolio</p>
-    <ul class="rows">
-      <li>
-        <a href="https://onepet.com" target="_blank" rel="noopener"><span class="row-name">OnePet</span></a>
-        <span class="row-note">CEO</span>
-      </li>
-      <li>
-        <a href="https://certapet.com" target="_blank" rel="noopener"><span class="row-name">CertaPet</span></a>
-        <span class="row-note">Founder</span>
-      </li>
-      <li>
-        <a href="https://honestpaws.com" target="_blank" rel="noopener"><span class="row-name">Honest Paws</span></a>
-        <span class="row-note">Founder</span>
-      </li>
-      <li>
-        <a href="https://vetspreferred.com" target="_blank" rel="noopener"><span class="row-name">Vets Preferred</span></a>
-        <span class="row-note">Founder</span>
-      </li>
-    </ul>
+    <section aria-labelledby="portfolio-heading">
+      <h2 id="portfolio-heading" class="section-label">Portfolio</h2>
+      <ul class="rows">
+        <li>
+          <a href="https://onepet.com" rel="noopener" target="_blank"><span class="row-name">OnePet</span></a>
+          <span class="row-note">CEO</span>
+        </li>
+        <li>
+          <a href="https://certapet.com" rel="noopener" target="_blank"><span class="row-name">CertaPet</span></a>
+          <span class="row-note">Founder</span>
+        </li>
+        <li>
+          <a href="https://honestpaws.com" rel="noopener" target="_blank"><span class="row-name">Honest Paws</span></a>
+          <span class="row-note">Founder</span>
+        </li>
+        <li>
+          <a href="https://vetspreferred.com" rel="noopener" target="_blank"><span class="row-name">Vets Preferred</span></a>
+          <span class="row-note">Founder</span>
+        </li>
+      </ul>
+    </section>
 
     <hr />
 
     <!-- Investments -->
-    <p class="section-label">Investments</p>
-    <ul class="rows">
-      <li>
-        <span class="row-name">AdEspresso</span>
-        <span class="row-note">Investor</span>
-      </li>
-      <li>
-        <span class="row-name">Sellbrite</span>
-        <span class="row-note">Investor</span>
-      </li>
-      <li>
-        <span class="row-name">Shift.org</span>
-        <span class="row-note">Investor</span>
-      </li>
-      <li>
-        <span class="row-name">Circufiber</span>
-        <span class="row-note">Investor</span>
-      </li>
-    </ul>
+    <section aria-labelledby="investments-heading">
+      <h2 id="investments-heading" class="section-label">Investments</h2>
+      <ul class="rows">
+        <li>
+          <span class="row-name">AdEspresso</span>
+          <span class="row-note">Investor</span>
+        </li>
+        <li>
+          <span class="row-name">Sellbrite</span>
+          <span class="row-note">Investor</span>
+        </li>
+        <li>
+          <span class="row-name">Shift.org</span>
+          <span class="row-note">Investor</span>
+        </li>
+        <li>
+          <span class="row-name">Circufiber</span>
+          <span class="row-note">Investor</span>
+        </li>
+      </ul>
+    </section>
 
     <hr />
 
     <!-- Principles -->
-    <p class="section-label">Operating principles</p>
-    <ul class="principles">
-      <li><span class="principle-title">Action generates information.</span></li>
-      <li><span class="principle-title">Simple is better.</span></li>
-    </ul>
+    <section aria-labelledby="principles-heading">
+      <h2 id="principles-heading" class="section-label">Operating principles</h2>
+      <ul class="principles">
+        <li><span class="principle-title">Action generates information.</span></li>
+        <li><span class="principle-title">Simple is better.</span></li>
+      </ul>
+    </section>
 
   </main>
 
-  <footer>© Erik Rivera</footer>
+  <footer>&copy; 2026 Erik Rivera</footer>
 
 </body>
 </html>
