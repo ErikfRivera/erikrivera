@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import { ERIK } from '../data/entity';
+
+const title = 'About Erik Rivera — CEO of OnePet, Naval Academy Graduate';
+const description = ERIK.shortBio;
+---
+<Base title={title} description={description} path="/about" schemaMode="profile">
+  <header class="hero">
+    <img
+      class="headshot"
+      src="/images/erik-rivera.jpg"
+      width="1200"
+      height="1200"
+      alt="Erik Rivera, CEO of OnePet"
+      decoding="async"
+    />
+    <h1 class="name">About Erik <em>Rivera</em></h1>
+    <p class="lede">{ERIK.shortBio}</p>
+  </header>
+
+  <section aria-labelledby="bio-heading">
+    <h2 id="bio-heading" class="section-label">Biography</h2>
+    <div class="prose">
+      {ERIK.longBio.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="timeline-heading">
+    <h2 id="timeline-heading" class="section-label">Career timeline</h2>
+    <ol class="timeline">
+      {ERIK.timeline.map((entry) => (
+        <li>
+          <span class="timeline-years">{entry.years}</span>
+          {entry.url ? (
+            <a class="timeline-org" href={entry.url} rel="noopener">{entry.organization}</a>
+          ) : (
+            <span class="timeline-org">{entry.organization}</span>
+          )}
+          <span class="timeline-role">{entry.role}</span>
+          <p class="timeline-desc">{entry.description}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="press-heading">
+    <h2 id="press-heading" class="section-label">Press &amp; mentions</h2>
+    {ERIK.press.length > 0 ? (
+      <ul class="rows">
+        {ERIK.press.map((item) => (
+          <li>
+            <a href={item.url} rel="noopener"><span class="row-name">{item.title}</span></a>
+            <span class="row-note">{item.publisher}</span>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="prose">
+        Third-party coverage is being collected and will be listed here. For interview
+        requests and an approved bio, see the <a href="/press">press kit</a>.
+      </p>
+    )}
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="disambiguation-heading">
+    <h2 id="disambiguation-heading" class="section-label">Not to be confused with</h2>
+    <p class="prose">{ERIK.notToBeConfusedWith}</p>
+  </section>
+</Base>
