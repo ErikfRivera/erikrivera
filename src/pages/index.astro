@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import { ERIK, operatingVentures, investments } from '../data/entity';
+
+const title = 'Erik Rivera — CEO of OnePet | Naval Academy Grad, Former Navy EOD Officer';
+---
+<Base title={title} description={ERIK.shortBio} path="/" schemaMode="home">
+  <header class="hero">
+    <img
+      class="headshot"
+      src="/images/erik-rivera.jpg"
+      width="1200"
+      height="1200"
+      alt="Erik Rivera, CEO of OnePet"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <h1 class="name">Erik <em>Rivera</em></h1>
+    <p class="lede">{ERIK.shortBio}</p>
+    <p class="tagline">making complex things simple</p>
+    <address class="location">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span>{ERIK.location.label}</span>
+    </address>
+  </header>
+
+  <section aria-labelledby="glance-heading">
+    <h2 id="glance-heading" class="section-label">At a glance</h2>
+    <dl class="glance">
+      <dt>Role</dt>
+      <dd>{ERIK.jobTitle}, {ERIK.worksFor.name}</dd>
+      <dt>Brands</dt>
+      <dd>{ERIK.brands.join(', ')}</dd>
+      <dt>Education</dt>
+      <dd>{ERIK.alumniOf.name}</dd>
+      <dt>Service</dt>
+      <dd>{ERIK.service}</dd>
+      <dt>Based in</dt>
+      <dd>{ERIK.location.label}</dd>
+    </dl>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="bio-heading">
+    <h2 id="bio-heading" class="section-label">Bio</h2>
+    <div class="prose">
+      {ERIK.longBio.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="ventures-heading">
+    <h2 id="ventures-heading" class="section-label">Ventures</h2>
+
+    <h3 class="sub-label">Founded / Operate</h3>
+    <ul class="rows">
+      {operatingVentures.map((venture) => (
+        <li>
+          {venture.url ? (
+            <a href={venture.url} rel="noopener"><span class="row-name">{venture.name}</span></a>
+          ) : (
+            <span class="row-name">{venture.name}</span>
+          )}
+          <span class="row-note">{venture.note ? `${venture.role} · ${venture.note}` : venture.role}</span>
+        </li>
+      ))}
+    </ul>
+
+    <h3 class="sub-label">Investments</h3>
+    <p class="prose">{ERIK.investmentsLede}</p>
+    <ul class="rows" style="margin-top:16px">
+      {investments.map((venture) => (
+        <li>
+          {venture.url ? (
+            <a href={venture.url} rel="noopener"><span class="row-name">{venture.name}</span></a>
+          ) : (
+            <span class="row-name">{venture.name}</span>
+          )}
+          <span class="row-note">{venture.role}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="profiles-heading">
+    <h2 id="profiles-heading" class="section-label">Profiles</h2>
+    <nav class="links" aria-label="Profiles of Erik Rivera on other sites">
+      {ERIK.profiles.map((profile) => (
+        <a href={profile.url} rel="me noopener">{profile.label}</a>
+      ))}
+    </nav>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="principles-heading">
+    <h2 id="principles-heading" class="section-label">Operating principles</h2>
+    <ul class="principles">
+      {ERIK.principles.map((principle) => (
+        <li><span class="principle-title">{principle}</span></li>
+      ))}
+    </ul>
+  </section>
+</Base>

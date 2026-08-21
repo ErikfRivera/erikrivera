@@ -1,0 +1,117 @@
+---
+/**
+ * Emits the page's JSON-LD @graph.
+ *
+ * The canonical `Person` node is DEFINED on the homepage only (mode="home").
+ * Every other page REFERENCES it by `@id` so there is exactly one Person node
+ * for the entity across the whole site (FR-2, FR-3).
+ */
+import { ERIK, sameAs } from '../data/entity';
+
+interface Props {
+  mode: 'home' | 'profile' | 'page';
+  url: string;
+  title: string;
+  description: string;
+}
+
+const { mode, url, title, description } = Astro.props;
+
+const IMAGE_ID = `${ERIK.canonicalUrl}#headshot`;
+const CONTEXT = 'https://schema.org';
+
+const imageNode = {
+  '@type': 'ImageObject',
+  '@id': IMAGE_ID,
+  url: ERIK.imageUrl,
+  contentUrl: ERIK.imageUrl,
+  width: ERIK.imageWidth,
+  height: ERIK.imageHeight,
+  caption: ERIK.imageCaption,
+};
+
+const personNode = {
+  '@type': 'Person',
+  '@id': ERIK.entityId,
+  mainEntityOfPage: { '@id': `${ERIK.canonicalUrl}#webpage` },
+  name: ERIK.name,
+  givenName: ERIK.givenName,
+  familyName: ERIK.familyName,
+  description: ERIK.shortBio,
+  disambiguatingDescription: ERIK.disambiguatingDescription,
+  image: imageNode,
+  url: ERIK.canonicalUrl,
+  jobTitle: ERIK.jobTitle,
+  hasOccupation: [
+    {
+      '@type': 'Occupation',
+      name: ERIK.jobTitle,
+      occupationLocation: { '@type': 'City', name: ERIK.location.label },
+    },
+    { '@type': 'Occupation', name: ERIK.serviceOccupation },
+  ],
+  worksFor: {
+    '@type': 'Organization',
+    '@id': ERIK.worksFor['@id'],
+    name: ERIK.worksFor.name,
+    url: ERIK.worksFor.url,
+    foundingDate: ERIK.worksFor.foundingDate,
+    description: ERIK.worksFor.description,
+  },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: ERIK.alumniOf.name,
+    url: ERIK.alumniOf.url,
+    sameAs: [...ERIK.alumniOf.sameAs],
+  },
+  homeLocation: {
+    '@type': 'Place',
+    name: ERIK.location.label,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: ERIK.location.addressLocality,
+      addressRegion: ERIK.location.addressRegion,
+      addressCountry: ERIK.location.addressCountry,
+    },
+  },
+  nationality: { '@type': 'Country', name: ERIK.nationality },
+  knowsAbout: [...ERIK.knowsAbout],
+  sameAs: sameAs(),
+};
+
+const websiteNode = {
+  '@type': 'WebSite',
+  '@id': ERIK.websiteId,
+  url: ERIK.canonicalUrl,
+  name: ERIK.name,
+  description: ERIK.shortBio,
+  publisher: { '@id': ERIK.entityId },
+  inLanguage: 'en-US',
+};
+
+const pageNode = {
+  '@type': mode === 'page' ? 'WebPage' : 'ProfilePage',
+  '@id': `${url}#webpage`,
+  url,
+  name: title,
+  description,
+  isPartOf: { '@id': ERIK.websiteId },
+  about: { '@id': ERIK.entityId },
+  ...(mode === 'page' ? {} : { mainEntity: { '@id': ERIK.entityId } }),
+  primaryImageOfPage: { '@id': IMAGE_ID },
+  inLanguage: 'en-US',
+};
+
+// Non-home pages reference the Person by @id via pageNode.about / .mainEntity
+// instead of redefining the node (FR-3).
+const graph = mode === 'home'
+  ? [personNode, websiteNode, pageNode]
+  : [websiteNode, pageNode];
+
+// Escape any "</script" sequence so the JSON can never break out of the tag.
+const json = JSON.stringify({ '@context': CONTEXT, '@graph': graph }).replace(
+  /<\/(script)/gi,
+  '<\\/$1',
+);
+---
+<script type="application/ld+json" is:inline set:html={json} />
