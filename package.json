@@ -1,0 +1,24 @@
+{
+  "name": "erikrivera-com",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Entity home for Erik Rivera — CEO of OnePet.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check",
+    "test": "vitest run",
+    "vercel-build": "astro build && vitest run"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.14.1",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}

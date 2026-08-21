@@ -1,6 +1,27 @@
 {
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "status": 301, "headers": { "Location": "/" } }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build && npm test",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/(favicon.ico|favicon.svg|apple-touch-icon.png)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=31536000"
+        }
+      ]
+    }
   ]
 }

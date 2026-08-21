@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import { ERIK } from '../data/entity';
+
+const title = 'Press Kit — Erik Rivera, CEO of OnePet';
+const description = ERIK.shortBio;
+---
+<Base title={title} description={description} path="/press" schemaMode="page">
+  <header class="hero">
+    <h1 class="name">Press <em>kit</em></h1>
+    <p class="lede">
+      Approved bio, headshots, and title for <a href="/about">Erik Rivera</a>, {ERIK.jobTitle} of {ERIK.worksFor.name}.
+      Please use these verbatim so coverage stays consistent.
+    </p>
+  </header>
+
+  <section aria-labelledby="title-heading">
+    <h2 id="title-heading" class="section-label">Approved title</h2>
+    <div class="kit">
+      <div class="kit-head">
+        <span class="kit-title">Title</span>
+        <button class="copy-btn" type="button" data-copy-target="approved-title">Copy</button>
+      </div>
+      <p id="approved-title">{ERIK.approvedTitleString}</p>
+    </div>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="bios-heading">
+    <h2 id="bios-heading" class="section-label">Bios</h2>
+
+    <div class="kit">
+      <div class="kit-head">
+        <span class="kit-title">Short bio ({ERIK.shortBio.length} characters)</span>
+        <button class="copy-btn" type="button" data-copy-target="short-bio">Copy</button>
+      </div>
+      <p id="short-bio">{ERIK.shortBio}</p>
+    </div>
+
+    <div class="kit">
+      <div class="kit-head">
+        <span class="kit-title">Long bio</span>
+        <button class="copy-btn" type="button" data-copy-target="long-bio">Copy</button>
+      </div>
+      <div id="long-bio">
+        {ERIK.longBio.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+
+    <div class="kit">
+      <div class="kit-head">
+        <span class="kit-title">One-line description</span>
+        <button class="copy-btn" type="button" data-copy-target="disambiguation">Copy</button>
+      </div>
+      <p id="disambiguation">{ERIK.disambiguatingDescription}</p>
+    </div>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="headshot-heading">
+    <h2 id="headshot-heading" class="section-label">Headshot</h2>
+    <img
+      class="headshot headshot--asset"
+      src="/images/erik-rivera.jpg"
+      width="1200"
+      height="1200"
+      alt="Erik Rivera, CEO of OnePet"
+      decoding="async"
+    />
+    <ul class="rows">
+      <li>
+        <a href="/images/erik-rivera.jpg" download><span class="row-name">Headshot — square</span></a>
+        <span class="row-note">JPG · {ERIK.imageWidth}×{ERIK.imageHeight}</span>
+      </li>
+      <li>
+        <a href="/images/erik-rivera-og.jpg" download><span class="row-name">Headshot — social crop</span></a>
+        <span class="row-note">JPG · {ERIK.ogImageWidth}×{ERIK.ogImageHeight}</span>
+      </li>
+    </ul>
+    <p class="note">Caption: {ERIK.imageCaption}</p>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="pronunciation-heading">
+    <h2 id="pronunciation-heading" class="section-label">Pronunciation</h2>
+    <p class="prose">Erik Rivera — <em>EH-rik ree-VEH-rah</em>.</p>
+  </section>
+
+  <hr />
+
+  <section aria-labelledby="profiles-heading">
+    <h2 id="profiles-heading" class="section-label">Official profiles</h2>
+    <nav class="links" aria-label="Profiles of Erik Rivera on other sites">
+      {ERIK.profiles.map((profile) => (
+        <a href={profile.url} rel="me noopener">{profile.label}</a>
+      ))}
+    </nav>
+  </section>
+
+  <script>
+    // Progressive enhancement only — every string above is already in the HTML.
+    document.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const id = button.dataset.copyTarget;
+        const source = id ? document.getElementById(id) : null;
+        if (!source) return;
+        try {
+          await navigator.clipboard.writeText(source.innerText.trim());
+          const previous = button.textContent;
+          button.textContent = 'Copied';
+          setTimeout(() => { button.textContent = previous; }, 1500);
+        } catch {
+          button.textContent = 'Copy failed';
+        }
+      });
+    });
+  </script>
+</Base>
